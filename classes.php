@@ -1,41 +1,59 @@
 <?php
 abstract class Inhabitant{
-    
-    function draw(){
+    protected $image;
 
+    public abstract function onClick();
+    
+    public function draw(){
+        echo "<img src='./" . $this->image . "' onclick='".$this->onClick(). "' />";
     }
-    abstract function onClick();
-    public $image;
+    
+    
 }
 
 abstract class Animal extends Inhabitant{
     public $name;
 
     abstract public function makeSound();
-    function onClick(){
-
-    }
    
     
 }
 class Monkey extends Animal {
-    public $image;
-    public function MakeSound(){
-
+    protected $image = "monkey.jpg";
+    public function makeSound(){
+        return null;
+    }
+    public function onClick(){
+        $sound = 'var audio = new Audio("./monkey.mp3"); audio.play(); ';
+        $alert = 'alert("MONKEY");';
+        return $sound . $alert;
+        
     }
 }
-class Giraffe extends Animal {
-    public $image;
 
-    public function MakeSound(){
-        
+class Giraffe extends Animal {
+    protected $image = "giraffe.jpg";
+
+    public function makeSound(){
+        return null;
+    }
+    public function onClick(){
+        $sound = 'var audio = new Audio("./giraffe.mp3"); audio.play(); ';
+        $alert = 'alert("GIRAFFE");';
+        return $sound . $alert;
     }
 }
 class Tiger extends Animal {
-    public $image;
+    protected $image = "tiger.jpg";
 
-    public function MakeSound(){
-        
+    public function makeSound(){
+        return null;
+    }
+    public function onClick(){
+        $sound = 'var audio = new Audio("./tiger.mp3"); audio.play(); ';
+        $alert = 'alert("TIGER");';
+        return $sound . $alert;
+       
     }
 }
 abstract class Plant extends Inhabitant{
@@ -44,6 +62,8 @@ abstract class Plant extends Inhabitant{
     }
 }
 class Coconut extends Plant{
-    public $image;
+    protected $image = "coconut.jpg";
 }
+
+
 ?>

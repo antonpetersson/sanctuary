@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="result.php" method="post">
+<form action="results.php" method="post">
 Välj hur många apor du vill ha: <input type="number" name="monkies"><br>
 Välj hur många giraffer du vill ha: <input type="number" name="giraffes"><br>
 Välj hur många tigrar du vill ha: <input type="number" name="tigers"><br>
