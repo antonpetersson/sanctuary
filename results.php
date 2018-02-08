@@ -11,7 +11,7 @@ session_start();
     <title>Sanctuary</title>
 </head>
 <body>
-<audio src='./tiger.mp3'></audio>
+
 
     <?php
         //Gör session till post bara om man skickar formulären.
@@ -21,14 +21,20 @@ session_start();
         //Kollar om något ligger i session
         
         if ($_SESSION == null){
-            header('Location: http://localhost:1337/settings.php');
+            header('Location: http://antonpetersson.wieg17.se/sanctuary/settings.php');
         }
 
 
         $monkies = $_SESSION['monkies'];
         $giraffes = $_SESSION['giraffes'];
         $tigers = $_SESSION['tigers'];
+        $lions = $_SESSION['lions'];
+        $antelopes = $_SESSION['antelopes'];
+        $gorillas = $_SESSION['gorillas'];
         $coconuts = $_SESSION['coconuts'];
+        $palmtrees = $_SESSION['palmtrees'];
+        $pinetrees = $_SESSION['pinetrees'];
+        $roses = $_SESSION['roses'];
         
 
         for ($i = 1; $i <= $monkies; $i++) {
@@ -43,9 +49,33 @@ session_start();
             $myTiger = new Tiger();
             $myTiger -> draw();
         } 
+        for ($i = 1; $i <= $lions; $i++) {
+            $myLion = new Lion();
+            $myLion -> draw();
+        } 
+        for ($i = 1; $i <= $antelopes; $i++) {
+            $myAntelope = new Antelope();
+            $myAntelope -> draw();
+        } 
+        for ($i = 1; $i <= $gorillas; $i++) {
+            $myGorilla = new Gorilla();
+            $myGorilla -> draw();
+        } 
         for ($i = 1; $i <= $coconuts; $i++) {
             $myCoconut = new Coconut();
             $myCoconut -> draw();
+        } 
+        for ($i = 1; $i <= $palmtrees; $i++) {
+            $myPalmtree = new Palmtree();
+            $myPalmtree -> draw();
+        } 
+        for ($i = 1; $i <= $pinetrees; $i++) {
+            $myPinetree = new Pinetree();
+            $myPinetree -> draw();
+        } 
+        for ($i = 1; $i <= $roses; $i++) {
+            $myRose = new Rose();
+            $myRose -> draw();
         } 
     ?>
     </br>

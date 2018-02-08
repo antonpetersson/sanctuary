@@ -2,10 +2,10 @@
 include "classes.php";
 session_start(); 
 if ($_SESSION == null){
-    header('Location: http://localhost:1337/settings.php');
+    header('Location: http://antonpetersson.wieg17.se/sanctuary/settings.php');
 }
 else {
-    header('Location: http://localhost:1337/results.php');
+    header('Location: http://antonpetersson.wieg17.se/sanctuary/results.php');
 }
 
 ?>
