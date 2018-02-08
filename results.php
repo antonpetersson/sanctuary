@@ -14,14 +14,33 @@ include "classes.php";
 <audio src='./tiger.mp3'></audio>
 
     <?php
-        $myMonkey = new Monkey();
-        $myMonkey -> draw();
-        $myGiraffe = new Giraffe();
-        $myGiraffe -> draw();
-        $myTiger = new Tiger();
-        $myTiger -> draw();
-        $myCoconut = new Coconut();
-        $myCoconut -> draw();
+        
+        
+        
+        
+        $monkies = $_POST['monkies'];
+        $giraffes = $_POST['giraffes'];
+        $tigers = $_POST['tigers'];
+        $coconuts = $_POST['coconuts'];
+        
+
+        for ($i = 1; $i <= $monkies; $i++) {
+            $myMonkey = new Monkey();
+            $myMonkey -> draw();
+        } 
+        for ($i = 1; $i <= $giraffes; $i++) {
+            $myGiraffe = new Giraffe();
+            $myGiraffe -> draw();
+        } 
+        for ($i = 1; $i <= $tigers; $i++) {
+            $myTiger = new Tiger();
+            $myTiger -> draw();
+        } 
+        for ($i = 1; $i <= $coconuts; $i++) {
+            $myCoconut = new Coconut();
+            $myCoconut -> draw();
+        } 
+
 
     ?>
 
