@@ -1,10 +1,10 @@
+<?php
+include "classes.php";
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php
-include "classes.php";
-
-?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,14 +14,21 @@ include "classes.php";
 <audio src='./tiger.mp3'></audio>
 
     <?php
+        //Gör session till post bara om man skickar formulären.
+        if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+            $_SESSION = $_POST;
+        }
+        //Kollar om något ligger i session
         
-        
-        
-        
-        $monkies = $_POST['monkies'];
-        $giraffes = $_POST['giraffes'];
-        $tigers = $_POST['tigers'];
-        $coconuts = $_POST['coconuts'];
+        if ($_SESSION == null){
+            header('Location: http://localhost:1337/settings.php');
+        }
+
+
+        $monkies = $_SESSION['monkies'];
+        $giraffes = $_SESSION['giraffes'];
+        $tigers = $_SESSION['tigers'];
+        $coconuts = $_SESSION['coconuts'];
         
 
         for ($i = 1; $i <= $monkies; $i++) {
@@ -40,9 +47,11 @@ include "classes.php";
             $myCoconut = new Coconut();
             $myCoconut -> draw();
         } 
-
-
     ?>
+    </br>
+    <form action="nuke.php" method="get">
+        <input type="submit" value="Bomba naturreservatet">
+    </form>
 
     
 </body>
